@@ -36,12 +36,3 @@ function displayHistory() {
 }
 
 displayHistory(); // Initial display on page load
-
-document.addEventListener('DOMContentLoaded', function() {
-  const elements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, div, section, footer, nav, img');
-  elements.forEach((element, index) => {
-    element.style.opacity = 0;
-    element.style.animation = 'fadeIn 1s ease-in-out forwards';
-    element.style.animationDelay = `${index * 0.2}s`;
-  });
-});

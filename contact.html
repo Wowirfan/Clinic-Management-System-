@@ -3,62 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>Contact - Clinic Management System</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
- <header style="background: linear-gradient(135deg, #434343, #000000); padding: 20px 0; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);">
-    <div class="container d-flex justify-content-between align-items-center">
-      <h1 style="font-size: 2em; margin: 0; color: #00bcd4;">🏥 My Clinic</h1>
-      <nav>
-        <a href="index.html" style="color: #00bcd4; text-decoration: none; margin-left: 20px; transition: color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#00bcd4'">Home</a>
-        <a href="doctors.html" style="color: #00bcd4; text-decoration: none; margin-left: 20px; transition: color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#00bcd4'">Doctors</a>
-        <a href="appointments.html" style="color: #00bcd4; text-decoration: none; margin-left: 20px; transition: color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#00bcd4'">Appointments</a>
-        <a href="contact.html" style="color: #00bcd4; text-decoration: none; margin-left: 20px; transition: color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#00bcd4'">Contact</a>
-      </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🏥 My Clinic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doctors.html">Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="appointments.html">Appointments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <section class="container py-3">
-    <h2 class="mb-3">Our Address</h2>
+  <!-- Main Content -->
+  <main class="container py-5">
+    <h1 class="text-center mb-5 animate-on-load">Contact Us</h1>
     <div class="row">
-      <div class="col-md-4">
-        <div class="card mb-3">
-          <div class="card-body">
-            <i class="fa-solid fa-location-dot icon"></i>
-            <p>123 Main Road</p>
-            <p>Poonch, Jammu & Kashmir</p>
-          </div>
-        </div>
+      <div class="col-md-6 mb-4 animate-on-load anim-delay-1">
+        <h3>Our Location</h3>
+        <p>123 Health St, Wellness City, 45678</p>
+        <hr>
+        <h3>Phone</h3>
+        <p>(123) 456-7890</p>
+        <hr>
+        <h3>Email</h3>
+        <p>contact@myclinic.com</p>
       </div>
-
-      <div class="col-md-4">
-        <div class="card mb-3">
-          <div class="card-body">
-            <i class="fa-solid fa-envelope icon"></i>
-            <p>Email:</p>
-            <p>info@myclinic.com</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card mb-3">
-          <div class="card-body">
-            <i class="fa-solid fa-phone icon"></i>
-            <p>Phone:</p>
-            <p>+91 9876543210</p>
-          </div>
+      <div class="col-md-6 mb-4 animate-on-load anim-delay-2">
+        <h3>Find Us on Map</h3>
+        <div class="ratio ratio-16x9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2258899999997!2d144.9631!3d-37.814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d70f5d5a9a4!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1620000000000!5m2!1sen!2sau" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
-  </section>
-   <footer style="background: linear-gradient(135deg, #434343, #000000); color: #00bcd4; text-align: center; padding: 20px 0; font-size: 0.9em; position: fixed; bottom: 0; left: 0; width: 100%; box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);">
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-custom">
     <div class="container">
       <p>© 2025 My Clinic. All Rights Reserved.</p>
     </div>
   </footer>
-  <script src="script.js"></script>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

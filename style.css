@@ -1,177 +1,196 @@
+/* Import a futuristic font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* General Body Styles for a futuristic feel */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: #fff;
+  background-color: #0a0a1a; /* Very dark blue */
+  color: #f0f0f0;
+  /* Add padding to prevent content from being hidden by the fixed footer */
+  padding-bottom: 80px;
+  font-family: 'Orbitron', sans-serif;
 }
 
-.card-body {
-  text-align: center;
+/* Custom Navbar Style */
+.navbar-custom {
+  /* From a solid blue to a semi-transparent gradient for a glassy effect */
+  background: linear-gradient(90deg, rgba(13,110,253,0.15), rgba(0,255,255,0.1));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3); /* Cyan neon border */
 }
 
-img {
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.7); /* Cyan glow effect */
+  transition: all 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link:focus {
+    color: #00ffff; /* Bright cyan on hover */
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.navbar-custom .nav-link.active {
+  font-weight: bold;
+  color: #00ffff; /* Active link is bright cyan */
+}
+
+/* Hero Banner Section */
+.hero {
+  position: relative;
+  min-height: 80vh; /* Make banner take up most of the screen height */
+  color: white; /* Ensure text is visible against the dark background */
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 2%;
+  background-image: url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=2128&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* Add a semi-transparent overlay to darken the image for text readability */
+  background-color: rgba(10, 10, 26, 0.5);
+  background-blend-mode: multiply;
+  z-index: -1; /* Place it behind the content */
 }
 
-header {
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 20px;
+.hero .container {
+    position: relative; /* Ensure content stays on top of the pseudo-element */
+    /* Add a subtle shadow to the text to make it pop against the background */
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+/* Futuristic Button Style */
+.btn-primary {
+    background-color: #00ffff; /* Bright Cyan */
+    border-color: #00ffff;
+    color: #0a0a1a; /* Dark text for contrast */
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 50px; /* Pill shape */
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-width: 2px;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: transparent;
+    color: #00ffff;
+    border-color: #00ffff;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.9), 0 0 40px rgba(0, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Custom Footer Style */
+.footer-custom {
+  background-color: #111122; /* Dark footer to match the theme */
+  padding: 20px 0;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 255, 255, 0.3); /* Cyan neon border */
+  color: #a0a0a0; /* Lighter text for footer */
+  /* Make footer stick to the bottom */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  transition: color 0.3s ease;
+/* Animation for elements on load */
+.animate-on-load {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
-nav a:hover {
-  color: #aaa;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.hero {
-  text-align: center;
-  padding: 80px 0;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  /* margin: 20px; */
+/* Animation delays */
+.anim-delay-1 { animation-delay: 0.2s; }
+.anim-delay-2 { animation-delay: 0.4s; }
+.anim-delay-3 { animation-delay: 0.6s; }
+
+/* General Card Style for the theme */
+.card {
+    background: rgba(255, 255, 255, 0.05); /* Glassmorphism background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+    color: #f0f0f0; /* Ensure text inside the card is visible */
 }
 
-.btn {
-  display: inline-block;
-  background: #007bff;
-  color: white;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 30px;
-  transition: background 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #0056b3;
-}
-
+/* Doctor Card Specific Styles */
 .doctor-card {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  margin: 20px;
-  padding: 25px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* To keep image corners rounded */
 }
 
 .doctor-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3); /* Glowing shadow */
 }
 
-form {
-  max-width: 400px;
-  margin: 30px auto;
-  display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.doctor-card img {
+  height: 280px;
+  object-fit: cover;
+  object-position: top; /* Focus on the face */
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2); /* Separator line */
 }
 
-form input, form select, form button {
-  margin: 12px 0;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+.doctor-card .text-muted {
+  color: #adb5bd !important; /* A lighter muted color for dark backgrounds */
 }
 
-form button {
-  background: #007bff;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s ease;
+/* Futuristic Form Styles */
+.form-control, .form-select {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: #f0f0f0;
+  border-radius: 5px;
 }
 
-form button:hover {
-  background: #0056b3;
+.form-control:focus, .form-select:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
-.footer {
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+.form-label {
+  color: #00ffff;
 }
 
-section {
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 30px;
-  text-align: center;
+/* Make date picker icon visible on dark background */
+.form-control::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
 
-section h2 {
-  font-size: 32px;
-  margin-bottom: 35px;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+/* Futuristic Table */
+.table {
+  border-color: rgba(0, 255, 255, 0.3);
 }
 
-.contact-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+.table-dark {
+  --bs-table-bg: rgba(10, 10, 26, 0.5);
+  --bs-table-border-color: rgba(0, 255, 255, 0.3);
+  --bs-table-color: #f0f0f0;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.card:hover {
-  transform: translateY(-10px);
-}
-
-.icon {
-  font-size: 40px;
-  color: #ade257;
-  margin-bottom: 20px;
-}
-
-.card p {
-  font-size: 17px;
-  color: #ddd;
-  margin: 7px 0;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: rgba(255, 255, 255, 0.05);
 }
